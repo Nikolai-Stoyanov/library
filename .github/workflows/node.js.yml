@@ -25,10 +25,10 @@ jobs:
       run: npm ci
 
     - name: Start frontend
-      run: npm run start
+      run: npm run start &
 
     - name: Start server
-      run: npm run server
+      run: npm run server &
 
     - name: Run integration tests
       run: npm test
