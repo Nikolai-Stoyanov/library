@@ -24,13 +24,17 @@ jobs:
     - name: Install program dependencies
       run: npm ci
 
-    - name: Install system dependencies for Playwright
+    - name: Install Playwright dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y \
-          libicu-dev \
-          libffi-dev \
-          libx11-xcb1
+          wget \
+          curl \
+          gnupg \
+          lsb-release \
+          sudo \
+          ca-certificates
+        npx playwright install-deps
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
