@@ -24,20 +24,11 @@ jobs:
     - name: Install program dependencies
       run: npm ci
 
-    - name: Install Playwright dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          wget \
-          curl \
-          gnupg \
-          lsb-release \
-          sudo \
-          ca-certificates
-        npx playwright install-deps
+    - name: Start frontend
+      run: npm run start
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+    - name: Start server
+      run: npm run server
 
     - name: Run integration tests
       run: npm test
