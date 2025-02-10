@@ -48,8 +48,8 @@ jobs:
       - name: Deploy Frontend
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service_id: ${{ secrets.MY_RENDER_SERVICE_ID_FE }}
-          api_key: ${{ secrets.MY_RENDER_API_KEY }}
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID_FE }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
           wait-for-success: true
 
   deploy-be:
@@ -61,6 +61,6 @@ jobs:
       - name: Deploy Backend
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service_id: ${{ secrets.MY_RENDER_SERVICE_ID_BE }}
-          api_key: ${{ secrets.MY_RENDER_API_KEY }}
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID_BE }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
           wait-for-success: true
