@@ -27,6 +27,9 @@ jobs:
     - name: Start frontend
       run: npm run start-fe &
 
+    - name: Replace the backend endpoint
+      run: echo "export const settings = {host:\"http://localhost:3030\"}" > src/config.js
+
     - name: Start Backend
       run: npm run start-be &
 
